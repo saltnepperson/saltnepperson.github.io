@@ -20,8 +20,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           version: 23
+        cache: pnpm
 
-  cache: pnpm
       - name: Install dependencies
         run: pnpm install
 
@@ -35,7 +35,7 @@ jobs:
         with:
         path: 'build/'
 
-    deploy:
+      deploy:
       needs: build_site
       runs-on: ubuntu-latest
 
